@@ -5,6 +5,7 @@ public class Person {
 	int age;
 	String name ;
 	char gender;
+	String ocupation ;
 	
 	String getName(){
 		return name;
@@ -26,5 +27,11 @@ public class Person {
 	}
 	void setGender( char gender){
 		this.gender = gender;
+	}
+	String getOcutpation(){
+		return ocupation;
+	}
+	void setocupation(String ocupation){
+		this.ocupation= ocupation;
 	}
 }
