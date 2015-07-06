@@ -7,7 +7,18 @@ public class Helicopter {
 	private int numCrew;
 	private double maxAltittude;
 	
+	private static final double FEET_TO_METER = 3.3;
+	
+	/**
+	 * @deprecated
+	 * 
+	 * @return
+	 */
 	public  double getCurrentAltitude(){
+		return this.currentAltitude;
+	}
+	
+	public double getCurrentAltitudeInFeet(){
 		return this.currentAltitude;
 	}
 	
@@ -33,5 +44,9 @@ public class Helicopter {
 			return;
 		}
 		this.maxAltittude = maxAltittude;
+	}
+	
+	public double getCurrentAltitudeInMeters(){
+		return (this.getCurrentAltitude()/ FEET_TO_METER);
 	}
 }

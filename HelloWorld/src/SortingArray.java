@@ -66,7 +66,7 @@ public class SortingArray {
 			}
 			int index=0;
 			Scanner indexScan = new Scanner(System.in);
-			System.out.print("please enter the number to search "+index);
+			System.out.print("\nplease enter the number to search "+index);
 			index = indexScan.nextInt();
 			
 			 index = Arrays.binarySearch(numArray,11 ); // will search the number  in the array
@@ -74,7 +74,7 @@ public class SortingArray {
 				System.out.println("\nsorry the number is not listed");
 				
 			}else {
-				System.out.println("\nnumbers @ "+index);
+				System.out.println("\nnumber @ "+index);
 			}
 			
 	}

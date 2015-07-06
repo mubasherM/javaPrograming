@@ -5,9 +5,9 @@ public class HelicopterApp {
 		
 		Helicopter chopper = new Helicopter();
 		
-		System.out.println("the Current altitude of the helicopter is: "+ chopper.getCurrentAltitude());
+		System.out.println("the Current altitude of the helicopter is: "+ chopper.getCurrentAltitudeInFeet());
 		chopper.setCurrentAltitude(1500.0D);
-		System.out.println("the Current altitude of the helicopter is: "+ chopper.getCurrentAltitude());
+		System.out.println("the Current altitude of the helicopter is: "+ chopper.getCurrentAltitude    ());
 		
 		System.out.println("the number of crew is: "+ chopper.getNumCrew());
 		chopper.setNumCrew(4);
@@ -16,8 +16,10 @@ public class HelicopterApp {
 		System.out.println("Maximum Altittude is : "+ chopper.getMaxAltittude());
 		//chopper.setMaxAltittude(50000.0D);
 		System.out.println("Maximum Altittude is : "+ chopper.getMaxAltittude());
-		chopper.setMaxAltittude(70000.0D);
+		chopper.setMaxAltittude(20000.0D);
 		System.out.println("Maximum Altittude is : "+ chopper.getMaxAltittude());
+		
+		System.out.println(chopper.getCurrentAltitudeInMeters()+"M");
 		
 	}
 
