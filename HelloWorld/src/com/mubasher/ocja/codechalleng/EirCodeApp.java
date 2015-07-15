@@ -3,7 +3,7 @@
  * Prototype Eircode search programme.
  * 
  * @author Seamus O'Toole, Mubasher Mohammed, Marcos Cesar
- * @version 0.5
+ * @version 1.0
  */
 package com.mubasher.ocja.codechalleng;
 
@@ -18,13 +18,30 @@ public class EirCodeApp {
 
 
 	public static void main(String[] args) {
+		int addressArraySize = 10;
 
-
-		String [] addressArray = {"5 Merrion Square North, Dublin 2", "10 Burlington Road, Dublin 4", 
-				"Dunsink Observatory, Dunsink Lane, Dublin 15", "26 KINCORA ROAD, Clontarf, Dublin 3", 
-				"Partas, 4A BROOKFIELD ENTERPRISE CENTRE, Dublin 24", "HODGES FIGGIS, 56-58 DAWSON STREET, Dublin 2", 
-				"CENTRAL BANK OF IRELAND, DAME STREET, Dublin 2", "", "", ""};		
-		String [] eirCodeArray = {"D02Y006", "D04C932","D15XR2R","D03RR27","D24H510", "D02XE81", "D02P656", "", "", ""};
+		StringBuilder [] addressArray = new StringBuilder [addressArraySize];
+		StringBuilder [] eirCodeArray = new StringBuilder [addressArraySize];
+		addressArray[0].append("5 Merrion Square North, Dublin 2");
+		addressArray[1].append("10 Burlington Road, Dublin 4");
+		addressArray[2].append("Dunsink Observatory, Dunsink Lane, Dublin 15");
+		addressArray[3].append("26 KINCORA ROAD, Clontarf, Dublin 3");
+		addressArray[4].append("Partas, 4A BROOKFIELD ENTERPRISE CENTRE, Dublin 24");
+		addressArray[5].append("HODGES FIGGIS, 56-58 DAWSON STREET, Dublin 2");
+		addressArray[6].append("CENTRAL BANK OF IRELAND, DAME STREET, Dublin 2");
+		eirCodeArray[0].append("D02Y006");
+		eirCodeArray[1].append("D04C932");
+		eirCodeArray[2].append("D15XR2R");
+		eirCodeArray[3].append("D03RR27");
+		eirCodeArray[4].append("D24H510");
+		eirCodeArray[5].append("D02XE81");
+		eirCodeArray[6].append("D02P656");
+		
+//			{"5 Merrion Square North, Dublin 2", "10 Burlington Road, Dublin 4", 
+//								"Dunsink Observatory, Dunsink Lane, Dublin 15", "26 KINCORA ROAD, Clontarf, Dublin 3", 
+//				"Partas, 4A BROOKFIELD ENTERPRISE CENTRE, Dublin 24", "HODGES FIGGIS, 56-58 DAWSON STREET, Dublin 2", 
+//				"CENTRAL BANK OF IRELAND, DAME STREET, Dublin 2", "", "", ""};		
+//		{"D02Y006", "D04C932","D15XR2R","D03RR27","D24H510", "D02XE81", "D02P656", "", "", ""};
 		int customAddressRemaining = 3;
 		boolean programRunning= true;
 
@@ -40,7 +57,7 @@ public class EirCodeApp {
 				do{
 					System.out.println("Please enter the Eircode");
 					Scanner scan = new Scanner(System.in);
-					String userInput = scan.nextLine();
+					StringBuilder userInput = scan.nextLine();
 					userInput=userInput.replace(" ", "");
 
 					for(int i=0; i<eirCodeArray.length; i++){
@@ -58,7 +75,7 @@ public class EirCodeApp {
 				break;
 			case 2:
 				System.out.println("Please enter the area code");
-				String userInput = sc.next();
+				StringBuilder userInput = sc.next();
 				for (int i=0; i<eirCodeArray.length; i++){
 					if (eirCodeArray[i].startsWith(userInput.toUpperCase())){
 						System.out.println(addressArray[i]);
@@ -69,7 +86,7 @@ public class EirCodeApp {
 
 			case 3:
 				System.out.println("Please enter part of the address");
-				String case3Input = sc.next();
+				StringBuilder case3Input = sc.next();
 				for (int i=0; i<eirCodeArray.length; i++){
 					if (addressArray[i].toLowerCase().contains(case3Input.toLowerCase())){
 						System.out.println(eirCodeArray[i]);
@@ -86,7 +103,7 @@ public class EirCodeApp {
 					System.out.println("You may enter up to " + customAddressRemaining + " addresses and Eircodes");
 					System.out.println("Please enter the eircode: ");
 					Scanner scan = new Scanner(System.in);
-					String case4Input = scan.nextLine();
+					StringBuilder case4Input = scan.nextLine();
 					case4Input=case4Input.replace(" ", "");
 					case4Input=case4Input.toUpperCase();
 					eirCodeArray[eirCodeArray.length - customAddressRemaining] = case4Input;
